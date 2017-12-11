@@ -22,11 +22,11 @@ p is_match("aa", "*")
 p is_match("*", "aa") 
 # → true
 
-is_match("aa", "a*") 
+p is_match("aa", "a*") 
 # → true
 
-is_match("ab", "?*") 
+p is_match("ab", "?*") 
 # → true
 
-is_match("aab", "c*a*b") 
+p is_match("aab", "c*a*b") 
 # → false
