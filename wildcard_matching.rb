@@ -1,12 +1,23 @@
+# loop through s and p
+# return true if characters are equal
+# return true if a question mark is in the input
+# return true if an asterisk is in the input
+# return false
+
 def is_match(s, p)
-	return true if s == p
-	return true if s == "*" || p == "*"
-	if p.include?("?") || s.include?("?")
-		return true
-	elsif p.include?("*") || s.include?("*")
-		return true 
+	# return true if s == p
+	# return true if s == "*" || p == "*"
+	# if p.include?("?") || s.include?("?")
+	# 	return true
+	# elsif p.include?("*") || s.include?("*")
+	# 	return true
+	# end
+	# false
+
+	i = 0
+	while s.length > i
+		return true if s[i] == p[i]
 	end
-	false
 end
 
 
