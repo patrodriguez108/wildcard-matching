@@ -5,14 +5,8 @@
 # return false
 
 def is_match(s, p)
-	# return true if s == p
-	# return true if s == "*" || p == "*"
-	# if p.include?("?") || s.include?("?")
-	# 	return true
-	# elsif p.include?("*") || s.include?("*")
-	# 	return true
-	# end
-	# false
+	return true if s == p
+	return true if s == "*" || p == "*"
 	if s.length == p.length
 		booleans = []
 		i = 0
@@ -27,8 +21,6 @@ def is_match(s, p)
 				return true
 			end
 		end
-	elsif s.include?("*") || p.include?("*")
-		return true
 	end
 	false
 end
