@@ -1,8 +1,6 @@
 def is_match(s, p)
 	return true if s == p
-	if s == "*" || p == "*"
-		return true
-	end
+	return true if s == "*" || p == "*"
 	false
 end
 
