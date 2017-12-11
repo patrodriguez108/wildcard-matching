@@ -13,19 +13,24 @@ def is_match(s, p)
 	# 	return true
 	# end
 	# false
-	booleans = []
-	i = 0
-	while s.length > i
-		booleans << (s[i] == "*" || p[i] == "*" || s[i] == "?" || p[i] == "?" || s[i] == p[i])
-		i += 1
-	end
-	booleans.each do |statement|
-		if statement == false
-			return false
-		elsif statement == true
-			return true
+	if s.length == p.length
+		booleans = []
+		i = 0
+		while s.length > i
+			booleans << (s[i] == "?" || p[i] == "?" || s[i] == p[i])
+			i += 1
 		end
+		booleans.each do |statement|
+			if statement == false
+				return false
+			elsif statement == true
+				return true
+			end
+		end
+	elsif s.include?("*") || p.include?("*")
+		return true
 	end
+	false
 end
 
 
