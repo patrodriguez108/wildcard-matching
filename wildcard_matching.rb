@@ -13,34 +13,42 @@ def is_match(s, p)
 	# 	return true
 	# end
 	# false
-
+	booleans = []
 	i = 0
 	while s.length > i
-		return true if s[i] == p[i]
+		booleans << (s[i] == "*" || p[i] == "*" || s[i] == "?" || p[i] == "?" || s[i] == p[i])
+		i += 1
+	end
+	booleans.each do |statement|
+		if statement == false
+			return false
+		elsif statement == true
+			return true
+		end
 	end
 end
 
 
-is_match("aa","a") 
-# → false
+p is_match("aa","a") 
+# # → false
 
-is_match("aa","aa") 
-# → true
+p is_match("aa","aa") 
+# # → true
 
-is_match("aaa","aa") 
-# → false
+p is_match("aaa","aa") 
+# # → false
 
-is_match("aa", "*") 
-# → true
+p is_match("aa", "*") 
+# # → true
 
-is_match("*", "aa") 
-# → true
+p is_match("*", "aa") 
+# # → true
 
-is_match("aa", "a*") 
-# → true
+p is_match("aa", "a*") 
+# # → true
 
-is_match("ab", "?*") 
-# → true
+p is_match("ab", "?*") 
+# # → true
 
 p is_match("aab", "c*a*b") 
 # → false
