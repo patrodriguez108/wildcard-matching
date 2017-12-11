@@ -15,11 +15,7 @@ def is_match(s, p)
 			i += 1
 		end
 		booleans.each do |statement|
-			if statement == false
-				return false
-			elsif statement == true
-				return true
-			end
+			return true if statement
 		end
 	end
 	false
