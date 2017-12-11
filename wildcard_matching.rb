@@ -1,18 +1,25 @@
 def is_match(s, p)
-
+	return true if s == p
+	if s == "*" || p == "*"
+		return true
+	end
+	false
 end
 
 
-is_match("aa","a") 
+p is_match("aa","a") 
 # → false
 
-is_match("aa","aa") 
+p is_match("aa","aa") 
 # → true
 
-is_match("aaa","aa") 
+p is_match("aaa","aa") 
 # → false
 
-is_match("aa", "*") 
+p is_match("aa", "*") 
+# → true
+
+p is_match("*", "aa") 
 # → true
 
 is_match("aa", "a*") 
